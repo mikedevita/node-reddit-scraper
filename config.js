@@ -1,7 +1,7 @@
 module.exports = {
   storeByUser: false,
   imgStore: 'data',
-  concurrents: 100,
+  concurrents: 10,
   domains: ['i.imgur.com', 'imgur.com'],
   reddit: {
     url: 'https://ssl.reddit.com',
@@ -10,8 +10,8 @@ module.exports = {
     sortBy: 'new',
     paging: false,
     nsfw: true,
-    pages: 8,
-    limit: 10,
+    pages: 10, 
+    limit: 1000,
   },
   imgur: {
     urls: {
