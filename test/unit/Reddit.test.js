@@ -4,7 +4,7 @@ var should = require('should');
 
 describe('Reddit Lib', function () {
 
-  describe('buildUrl()', function () {
+  describe.only('buildUrl()', function () {
     it('should return a valid reddit api url', function (done) {
       var subreddit = {
         storeByUser: true,
