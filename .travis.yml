@@ -10,3 +10,4 @@ node_js:
   - "iojs"
 before_script:
   - npm install -g mocha
+  - cp config.example.js config.js
