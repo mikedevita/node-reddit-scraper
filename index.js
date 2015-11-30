@@ -14,17 +14,24 @@ var log = new winston.Logger({
   transports: [new winston.transports.Console(config.log)]
 });
 
-Reddit.getData(config.reddit, function(err, pages){
-  
-  if (err) throw err;
-  
-  if( Array.isArray(pages) ){
-    async.eachLimit(pages, 1, function(page, callback){
-      Scraper.scrape(page, callback);
-    }, function(err){
-      // console.log(err);
-    })
-  }
-  
+var subreddits = config.subreddits;
+
+async.eachSeries(subreddits, function(subreddit, subCallback){
+  log.info("Processing subreddit " + subreddit.name);
+  Reddit.getData(config.reddit.url, subreddit, function(err, pages){
+	  
+	  if (err) throw err;
+	  
+	  if( Array.isArray(pages) ){
+	    async.eachLimit(pages, 1, function(page, callback){
+	      Scraper.scrape(subreddit, page, callback);
+	    }, function(err){
+	      if(err){
+		    log.error("Error processing " + subreddit.name + ": " + err);
+	      }
+	      subCallback(err);
+	    });
+	  }
+  });
 });
 
