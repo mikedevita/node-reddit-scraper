@@ -1,4 +1,6 @@
 # node-reddit-scraper [![Build Status](https://travis-ci.org/mikedevita/node-reddit-scraper.svg)](https://travis-ci.org/mikedevita/node-reddit-scraper)
+
+[![Join the chat at https://gitter.im/mikedevita/node-reddit-scraper](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/mikedevita/node-reddit-scraper?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 a node.js powered asynchronous scraper for reddit and imgur images.
 
 Supports multiple subreddits in the config file. At the present moment only supports images from imgur.
