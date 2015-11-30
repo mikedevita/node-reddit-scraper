@@ -9,13 +9,23 @@ Installation is straight forward
 ```
 git clone https://github.com/mikedevita/node-reddit-scraper;
 cd node-reddit-scraper;
+cp config.example.js config.js
 npm install;
 ```
 
 ## Usage
 This app is designed to be run via crontab or based on some sort of schedule.
 
+Edit the `config.js` file to include your subreddits, use the example as a guidelines.
+
 To invoke, just run `npm run` or `node index.js`.
+
+You can use this on a crontab like so..
+
+```
+# run every day at midnight
+0	0	*	*	*	node /path/to/node-reddit-scraper/index.js
+```
 
 ## Contributing
 pull requests are welcomed, just please adhere to the .eslintrc and .editorconfig's provided. Also run tests and make sure they pass fully.
