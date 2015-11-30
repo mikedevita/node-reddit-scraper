@@ -11,9 +11,12 @@
     "sanitize-filename": "^1.5.3",
     "winston": "^0.9.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "mocha": "^2.3.4",
+    "should": "^7.1.1"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_ENV=test mocha -R spec -b --recursive --timeout 12000"
   },
   "repository": {
     "type": "git",
