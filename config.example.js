@@ -9,6 +9,7 @@ module.exports = {
     userAgent: 'scraperBot/' + pkg.version + ' by ndboost'
   },
   imgur: {
+    rateLimit: 2000,
     urls: {
       hash: 'https://api.imgur.com/2/image',
       album: 'http://api.imgur.com/2/album'
