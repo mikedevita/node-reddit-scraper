@@ -11,7 +11,6 @@ describe('Gfycat Lib', function () {
           return done(err);
         }
         var image = response;
-        console.log(image);
         image.should.be.an.Array();
         image.length.should.eql(1);
         done();
