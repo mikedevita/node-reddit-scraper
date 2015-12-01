@@ -5,6 +5,10 @@ a node.js powered asynchronous scraper for reddit and imgur images.
 
 Supports multiple subreddits in the config file. At the present moment only supports images from imgur.
 
+![](http://i.imgur.com/UTZd3yu.png)
+
+----
+
 ## Installation
 Installation is straight forward
 
