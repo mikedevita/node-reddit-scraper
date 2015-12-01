@@ -17,7 +17,8 @@ async.each(subreddits, function (subreddit, subCallback) {
     }
 
     if ( Array.isArray(pages) ) {
-      async.eachLimit(pages, 1, function (page, callback) {
+      async.each(pages, function (page, callback) {
+        Log.debug('Index - Scraping page');
         Scraper.scrape(subreddit, page, callback);
       }, function (err) {
         if (err) {
