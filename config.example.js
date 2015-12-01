@@ -2,14 +2,18 @@ var pkg = require('./package.json');
 
 module.exports = {
   concurrents: 10,
-  domains: ['i.imgur.com', 'imgur.com'],
   reddit: {
     rateLimit: 3500,
     url: 'https://ssl.reddit.com',
     userAgent: 'scraperBot/' + pkg.version + ' by ndboost'
   },
+  gfycat: {
+    url: 'http://gfycat.com/cajax/get',
+    domains: ['gfycat.com', 'zippy.gfycat.com', 'giant.gifycat.com']
+  },
   imgur: {
     rateLimit: 2000,
+    domains: ['i.imgur.com', 'imgur.com', 'm.imgur.com'],
     urls: {
       hash: 'https://api.imgur.com/2/image',
       album: 'http://api.imgur.com/2/album'
