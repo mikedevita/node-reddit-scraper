@@ -1,6 +1,6 @@
 {
   "name": "node-reddit-scraper",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "a node.js powered async scraper for reddit.",
   "main": "index.js",
   "dependencies": {
