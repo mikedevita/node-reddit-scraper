@@ -2,7 +2,7 @@ var Imgur = require('../../lib/imgur');
 var config = require('../../config');
 var should = require('should');
 
-describe.only('Imgur Lib', function () {
+describe('Imgur Lib', function () {
   describe('getData', function () {
     it('should return an array of image url from a url', function (done) {
       var url = 'http://i.imgur.com/Ly6dDPX.jpg';
