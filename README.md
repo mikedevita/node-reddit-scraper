@@ -19,6 +19,18 @@ cp config.example.js config.js
 npm install;
 ```
 
+## Imgur v3 api requires a client-ID
+
+Go here [https://imgur.com/account/settings/apps](https://imgur.com/account/settings/apps) and create a new app.
+Paste the Client-ID and Client-Secret into the config.js.
+
+```
+auth: {
+  clientId: 'foo',
+  clientSecret: 'bar'
+},
+```
+
 ## Usage
 This app is designed to be run via crontab or based on some sort of schedule.
 
