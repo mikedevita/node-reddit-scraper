@@ -9,7 +9,7 @@
     "no-use-before-define"             : 2,
     "new-parens"                       : 2,
     "no-cond-assign"                   : 2,
-    "space-after-keywords"             : 2,
+    "keyword-spacing"                  : 2,
     "space-infix-ops"                  : 2,
     "comma-dangle"                     : [2, "never"],
     "no-multiple-empty-lines"          : [2, {"max": 2}],
@@ -18,8 +18,8 @@
     "wrap-iife"                        : [2, "inside"],
     "indent"                           : [2, 2],
     "brace-style"                      : [2, "1tbs"],
-    "spaced-line-comment"              : [2, "always", {"exceptions":["-","+"]}],
-    "space-before-function-parentheses": [2, {
+    "spaced-comment"                   : [2, "always", {"exceptions":["-","+"]}],
+    "space-before-function-paren"      : [2, {
                                             "anonymous" : "always",
                                             "named" : "never"
                                           }]

@@ -3,7 +3,6 @@ var config  = require('./config');
 var Reddit  = require('./lib/reddit');
 var Scraper = require('./lib/scraper');
 var Log     = require('./lib/logger');
-var pages   = require('./pages.json');
 var _       = require('lodash');
 
 var domains = [];
@@ -32,13 +31,18 @@ if ( config.imgur.enabled ) {
   domains.push(config.imgur.domains);
 }
 
+if ( config.redditmedia.enabled ) {
+  services.push('redditmedia');
+  domains.push(config.redditmedia.domains);
+}
+
 domains = _.flatten(domains);
 var sr = subreddits.map(function (subreddit) {
   return subreddit.name;
 });
 
 Log.info('  Subreddits: ' + sr);
-Log.info('  Services: ' + services);
+Log.info('  Services: ' + services.join(', '));
 console.log('-----------------------------------------------');
 async.each(subreddits, function (subreddit, subCallback) {
   Log.info('Started Processing /r/' + subreddit.name);
@@ -58,7 +62,6 @@ async.each(subreddits, function (subreddit, subCallback) {
       async.forEachOf(pages, function (page, index, callback) {
         // scrape the subreddit page
         Scraper.scrape(subreddit, page, { domains: domains }, function (err, images) {
-
           images = _.flatten(images);
           Images.push( images );
           stats.totalPagesScraped++;
