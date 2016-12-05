@@ -40,8 +40,8 @@ describe('Reddit Lib', function () {
         }
         pages.should.be.an.Array();
         pages.length.should.eql(subreddit.pages);
-        pages[0].data.children.length.should.eql(25);
-        done();
+        pages[0].data.children.length.should.eql(27);
+        return done();
       });
     });
   });
