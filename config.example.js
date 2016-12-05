@@ -36,7 +36,7 @@ module.exports = {
     }
   },
   log: {
-    level: 'debug',
+    level: 'info',
     handleExceptions: true,
     colorize: true,
     prettyPrint: true
