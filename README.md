@@ -13,10 +13,10 @@ Supports multiple subreddits in the config file. At the present moment only supp
 Installation is straight forward
 
 ```
-git clone https://github.com/mikedevita/node-reddit-scraper;
-cd node-reddit-scraper;
+git clone https://github.com/mikedevita/node-reddit-scraper
+cd node-reddit-scraper
 cp config.example.js config.js
-npm install;
+npm install
 ```
 
 ## Imgur v3 api requires a client-ID
