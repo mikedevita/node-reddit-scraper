@@ -2,6 +2,16 @@ var Reddit = require('../../lib/reddit');
 var config = require('../../config');
 var should = require('should');
 
+const subreddit = {
+  storeByUser: true,
+  name: 'pics',
+  imgStore: 'data/pics',
+  sortBy: 'new',
+  paging: true,
+  nsfw: true,
+  pages: 2
+};
+
 describe('Reddit Lib', function () {
 
   describe('buildUrl()', function () {
@@ -22,19 +32,16 @@ describe('Reddit Lib', function () {
       done();
     });
   });
-  describe('getData()', function () {
-    it('with paging enabled, it should return a valid array of subreddit pages', function (done) {
-      var subreddit = {
-        storeByUser: true,
-        name: 'pics',
-        imgStore: 'data/pics',
-        sortBy: 'new',
-        paging: true,
-        nsfw: true,
-        pages: 2
-      };
 
-      Reddit.getData(config.reddit.url, subreddit, function (err, pages) {
+  describe('getMediaFromPosts()', function () {
+    it('with paging enabled, it should return a valid arrahy of media links', () => { });
+    const posts = [];
+    Reddit.getMediaFromPosts(posts);
+  });
+
+  describe('getRedditPosts()', function () {
+    it('with paging enabled, it should return a valid array of subreddit pages', function (done) {
+      Reddit.getPosts(config.reddit.url, subreddit, function (err, pages) {
         if (err) {
           return done(err);
         }
